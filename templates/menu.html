@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Our Cakes</title><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body>
+    <h2>Menu</h2>
+    {% for cake in cakes %}
+        <div>
+            <img src="{{ url_for('static', filename='uploads/' ~ cake.image) }}" width="200"><br>
+            <strong>{{ cake.name }}</strong><br>
+            ₹{{ cake.price }} | {{ cake.weight }}<br>
+            <a href="https://wa.me/919999999999?text=I want to order {{ cake.name }}" target="_blank">Order on WhatsApp</a>
+            <hr>
+        </div>
+    {% endfor %}
+</body>
+</html>
